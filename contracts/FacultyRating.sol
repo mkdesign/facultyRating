@@ -12,6 +12,7 @@ contract FacultyVoting {
     struct rateInfo {
         uint256 feedBackCounter;
         uint8 average; // average of all the vote
+        bool flag; // to check whether exist or not
         
     }
     mapping (address => rateInfo ) private teachers;
@@ -27,6 +28,7 @@ contract FacultyVoting {
         for(uint256 i=0; i< _teachers.length; i++) {
             teachers[_teachers[i]].feedBackCounter = 0;
             teachers[_teachers[i]].average = 0;
+            teachers[_teachers[i]].flag = true;
         }
     }
     
@@ -51,19 +53,21 @@ contract FacultyVoting {
     }
     
     function sendFeedBack(address _teacher,uint8 _feedBack ) public {
-        //require(isWhiteListed(msg.sender), "You must be on the whitelist in order to send feedback.");
-        require(teachers[_teacher].feedBackCounter >= 0 , "teachers error");
-        // if(teachers[_teacher].feedBackCounter == 0) {
-        //     teachers[_teacher].feedBackCounter += 1;
-        //     teachers[_teacher].average = _feedBack;
-        // }else {
-        //     ((teachers[_teacher].feedBackCounter * teachers[_teacher].average) + _feedBack) / (teachers[_teacher].feedBackCounter+1);
-        //     teachers[_teacher].feedBackCounter +=1;
-        // }
+        require(isWhiteListed(msg.sender), "You must be on the whitelist in order to send feedback.");
+        require(teachers[_teacher].flag == true , "teachers error");
+        if(teachers[_teacher].feedBackCounter == 0) {
+            teachers[_teacher].feedBackCounter += 1;
+            teachers[_teacher].average = _feedBack;
+        }else {
+            ((teachers[_teacher].feedBackCounter * teachers[_teacher].average) + _feedBack) / (teachers[_teacher].feedBackCounter+1);
+            teachers[_teacher].feedBackCounter +=1;
+        }
         
     }
     
-    function getRates(address _teacher) public view onlyAdmin {
-        
+    function getRates(address _teacher) public view onlyAdmin returns(uint8)  {
+       require(teachers[_teacher].flag == true , "teachers error");
+       return teachers[_teacher].average;
     }
 }
+
