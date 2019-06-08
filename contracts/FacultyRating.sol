@@ -1,6 +1,6 @@
-pragma solidity 0.5.8;
+pragma solidity 0.5.4;
 
-contract FacultyVoting {
+contract FacultyRating {
     // This contract is about getting feedback of students on each faculty. 
     // Students give their feedback based on their statisfaction percentage.
     address public admin;
