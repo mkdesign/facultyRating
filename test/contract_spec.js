@@ -26,7 +26,7 @@ config({
 
 contract("FacultyRating", function () {
   this.timeout(0);
-  it("Lab3PersonalAccounting was deployed", async () => {
+  it("rate my professor contract was deployed", async () => {
     let address = await FacultyRating.options.address;
     assert.ok(address);
   });
