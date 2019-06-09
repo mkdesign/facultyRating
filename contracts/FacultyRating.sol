@@ -33,7 +33,7 @@ contract FacultyRating {
     }
     
     modifier onlyAdmin {
-        require(msg.sender == admin, 'You must be admin!');
+        require(msg.sender == admin, 'Request denied, you are not admin!');
         _;
     }
     
@@ -43,18 +43,18 @@ contract FacultyRating {
     }
     
     function addWhiteList(address _student) public onlyAdmin{
-        require(!isWhiteListed(_student), "The account is already can send feedback");
+        require(!isWhiteListed(_student), "The account is already exist");
         whiteList[_student] = true;
     }
     
     function removeFromWhiteList(address _student) public onlyAdmin {
-        require(isWhiteListed(_student), "The account must be on whiteList.");
+        require(isWhiteListed(_student), "The account is not on whiteList.");
         delete whiteList[_student];
     }
     
     function sendFeedBack(address _teacher,uint8 _feedBack ) public {
         require(isWhiteListed(msg.sender), "You must be on the whitelist in order to send feedback.");
-        require(teachers[_teacher].flag == true , "teachers error");
+        require(teachers[_teacher].flag == true , "this teacher does not exist");
         if(teachers[_teacher].feedBackCounter == 0) {
             teachers[_teacher].feedBackCounter += 1;
             teachers[_teacher].average = _feedBack;
@@ -66,7 +66,7 @@ contract FacultyRating {
     }
     
     function getRates(address _teacher) public view onlyAdmin returns(uint8)  {
-       require(teachers[_teacher].flag == true , "teachers error");
+       require(teachers[_teacher].flag == true , "this teacher does not exist");
        return teachers[_teacher].average;
     }
 }
