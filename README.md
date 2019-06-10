@@ -1,6 +1,7 @@
 # Faculty Rating System
 ---
-#Our Enterprise design patterns
+##Our Enterprise design patterns
+--
 In this project, we implemented 2 design patterns (verification pattern and whitelist pattern) to solve the challenges that current faculty member rating system faces.
 
 Current professor rating system, like the most popular "rate my professors", has always been seen as a flawed teaching evaluation rating system; it allows students to leave their ratings and comments about their professor anonymously on the website, and students could only rate their professors based on 4 ratings: helpfulness, clarity, easiness, hotness (massive gender-based bias!!). Moreover, since it is an open platform, anyone can comment on professors anonymously, therefore, it gives malicious users opportunities to write scathing, and untruthful comments about the profs, even though they never took the courses from the profs they rated. 
