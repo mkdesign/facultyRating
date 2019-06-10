@@ -1,6 +1,6 @@
 # Faculty Rating System
 ---
-##Our Enterprise design patterns
+#Our Enterprise design patterns
 In this project, we implemented 2 design patterns (verification pattern and whitelist pattern) to solve the challenges that current faculty member rating system faces.
 
 Current professor rating system, like the most popular "rate my professors", has always been seen as a flawed teaching evaluation rating system; it allows students to leave their ratings and comments about their professor anonymously on the website, and students could only rate their professors based on 4 ratings: helpfulness, clarity, easiness, hotness (massive gender-based bias!!). Moreover, since it is an open platform, anyone can comment on professors anonymously, therefore, it gives malicious users opportunities to write scathing, and untruthful comments about the profs, even though they never took the courses from the profs they rated. 
@@ -10,7 +10,7 @@ The solution that our project provids is that we only allow students who took th
 Although the decentralized prof rating system could improve our curernt flawed system, it still has limitations. The whitelist design pattern implemented into our project is to only allow a list of acceptable users to have an access to our system, it is based on a "zero trust" principle, but it is also challenging to keep the whitelists up to date, as it would require to store a large amount of data on-chain.
 
 ---
-##Usage
+#Usage
 **The contract is getting feedback of students on each faculty**
 **Students are able to give their feedback based on their statisfaction percentage**
 
@@ -67,7 +67,7 @@ constructor(address[] memory _students, address [] memory _teachers) public {
 
 
 ---
-##Test
+#Test
 Test embark
 ```
 $ embark test
