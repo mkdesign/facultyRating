@@ -1,5 +1,9 @@
 # Faculty Rating System
 ---
+Peichi Chien
+Zilan Ouyang
+Mohammad Reza Kavian
+--
 Our Enterprise design patterns
 --
 In this project, we implemented 2 design patterns (verification pattern and whitelist pattern) to solve the challenges that current faculty member rating system faces.
