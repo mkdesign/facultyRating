@@ -11,7 +11,8 @@ The solution that our project provids is that we only allow students who took th
 Although the decentralized prof rating system could improve our curernt flawed system, it still has limitations. The whitelist design pattern implemented into our project is to only allow a list of acceptable users to have an access to our system, it is based on a "zero trust" principle, but it is also challenging to keep the whitelists up to date, as it would require to store a large amount of data on-chain.
 
 ---
-#Usage
+Usage
+--
 **The contract is getting feedback of students on each faculty**
 **Students are able to give their feedback based on their statisfaction percentage**
 
@@ -68,13 +69,15 @@ constructor(address[] memory _students, address [] memory _teachers) public {
 
 
 ---
-#Test
+Test
+--
 Test embark
 ```
 $ embark test
 ```
 ---
-##License
+License
+--
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/mkdesign/facultyRating/blob/master/LICENSE) file for details
 
 
