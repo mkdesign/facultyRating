@@ -1,7 +1,9 @@
 # Faculty Rating System
 ---
 Peichi Chien
+-
 Zilan Ouyang
+-
 Mohammad Reza Kavian
 --
 Our Enterprise design patterns
